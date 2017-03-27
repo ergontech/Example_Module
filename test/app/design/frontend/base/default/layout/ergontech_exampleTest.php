@@ -4,6 +4,16 @@ namespace test;
 
 use ErgonTech\MageTest\LayoutHelpers;
 
+/**
+ * @link https://en.wikipedia.org/wiki/XPath
+ * @see LayoutHelpers
+ *
+ * Layout testing using the LayoutHelpers trait relies heavily on xpath.
+ * It provides the following assertions:
+ *   - assertXpathHasResults
+ *   - assertActionIsCalledOnNode
+ *   - assertHandleUpdatesHandle
+ */
 class ergontech_exampleTest extends \PHPUnit_Framework_TestCase
 {
     use LayoutHelpers;
@@ -19,6 +29,11 @@ class ergontech_exampleTest extends \PHPUnit_Framework_TestCase
         $this->layout = new \Varien_Simplexml_Config($filename);
     }
 
+    /**
+     * In this test we're asserting that the block "example" is added to the layout as expected:
+     *  - It's nested in the "root" reference of the default handle
+     *  - It has the proper name, type, and template
+     */
     public function testExampleBlockAddedToRootInDefault()
     {
         $xpath = 'default/reference[@name="root"]/block[@name="ergontech.example"]';
@@ -29,6 +44,10 @@ class ergontech_exampleTest extends \PHPUnit_Framework_TestCase
         static::assertEquals('example.phtml', $node->getAttribute('template'));
     }
 
+    /**
+     * In this test, we assert there's a root block reference in the default handle
+     * And that setTemplate is called with the right argument
+     */
     public function testActionCallOnRootInDefault()
     {
         $xpath = 'default/reference[@name="root"]';
