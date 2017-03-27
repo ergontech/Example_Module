@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layout>
+    <default>
+        <reference name="root">
+            <block name="ergontech.example" type="core/template" template="example.phtml"/>
+
+            <action method="setTemplate">
+                <template>page/example.phtml</template>
+            </action>
+        </reference>
+    </default>
+</layout>

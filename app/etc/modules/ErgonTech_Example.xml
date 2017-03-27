@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <ErgonTech_Example>
+            <active>true</active>
+            <codePool>community</codePool>
+        </ErgonTech_Example>
+    </modules>
+</config>

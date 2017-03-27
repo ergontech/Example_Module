@@ -1,0 +1,42 @@
+{
+    "name": "ergontech/example",
+    "type": "magento-module",
+    "description": "",
+    "repositories": [{"type":"vcs","url":"https:\/\/github.com\/ErgonTech\/MageTest_Utils"}],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.0",
+        "aydin-hassan/magento-core-composer-installer": "^1.4",
+        "magento/core": "^1.9",
+        "magetest/magento-phpunit-extension": "dev-develop",
+        "ergontech/magetest-utils": "dev-master"
+    },
+    "extra": {
+        "map": [
+            [
+                "app/etc/modules/ErgonTech_Example.xml",
+                "app/etc/modules/ErgonTech_Example.xml"
+            ],
+            [
+                "app/code/community/ErgonTech/Example",
+                "app/code/community/ErgonTech/Example"
+            ]
+        ],
+        "magento-root-dir": "root"
+    },
+    "autoload-dev": {
+        "files": [
+            "root/app/Mage.php"
+        ],
+        "psr-0": {
+            "": [
+                "app/code/community",
+                "root/app/code/community",
+                "root/app/code/core",
+                "root/lib"
+            ]
+        }
+    }
+}
